@@ -10,26 +10,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
-header {
+.button {
   background-color: #34495e;
-  color: #fefefe;
-  height: 25vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.main {
-  height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.button.hollow {
+  border-color: #34495e;
+  color: #34495e;
 }
-
 
 .form-floating-label {
   position: relative;
-  
 }
 
 .form-floating-label [type='text'],
@@ -47,19 +38,15 @@ header {
 .form-floating-label [type='url'],
 .form-floating-label [type='color'],
 .form-floating-label textarea {
-  margin-bottom: 0;
-  color: #8a8a8a;
-  font-size: 18px;
   font-weight: 300;
-  padding: 30px 1rem 1rem 25px;
+  padding: 30px 16px 16px 0px;
 }
 
 .form-floating-label label {
-  color: #cacaca;
-  font-size: 18px;
+  color: #999;
   position: absolute;
   pointer-events: none;
-  left: 25px;
+  left: 0;
   bottom: 0;
   transition: all 0.2s ease-in;
   font-weight: 300;
@@ -67,7 +54,6 @@ header {
 
 .form-floating-label textarea ~ label {
   top: 20px;
-  font-size: 18px;
   font-weight: 300;
 }
 
@@ -75,17 +61,50 @@ header {
 .form-floating-label input:disabled[value] ~ label,
 .form-floating-label.has-value input ~ label {
   top: 0;
-  font-size: 14px;
-  color: dodgerblue;
+  font-size: 16px;
+  color: #34495e;
   font-weight: 400;
 }
 
 .form-floating-label textarea:focus ~ label,
 .form-floating-label.has-value textarea ~ label {
   top: 0;
-  font-size: 14px;
-  color: dodgerblue;
+  font-size: 16px;
+  color: #34495e;
   font-weight: 400;
+}
+
+.form-floating-label input,
+.form-floating-label textarea {
+  margin-bottom: 1.25rem;
+  border: 0;
+  padding-left: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #34495e;
+  font-weight: 400;
+}
+
+.form-floating-label [type='text']:focus,
+.form-floating-label [type='password']:focus,
+.form-floating-label [type='date']:focus,
+.form-floating-label [type='datetime']:focus,
+.form-floating-label [type='datetime-local']:focus,
+.form-floating-label [type='month']:focus,
+.form-floating-label [type='week']:focus,
+.form-floating-label [type='email']:focus,
+.form-floating-label [type='number']:focus,
+.form-floating-label [type='search']:focus,
+.form-floating-label [type='tel']:focus,
+.form-floating-label [type='time']:focus,
+.form-floating-label [type='url']:focus,
+.form-floating-label [type='color']:focus,
+.form-floating-label textarea:focus {
+  color: #34495e;
+  transition: 0.2s ease-in-out;
+  box-shadow: none;
+  border: 0;
+  border-bottom: 2px solid #34495e;
+  padding-bottom: 15px;
 }
 
 .curtain-menu {
@@ -274,4 +293,3 @@ header {
       -ms-transform: translateX(-50%) translateY(-50%) rotate(-135deg);
           transform: translateX(-50%) translateY(-50%) rotate(-135deg);
 }
-

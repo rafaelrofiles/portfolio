@@ -1,51 +1,38 @@
 import React, { Component } from 'react';
 
-class Contact extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hasValue: false
-    }
-  }
-  render() {
-    const focusIn = () => {
-      this.state = { hasValue: true };
-    };
+import FormInput from '../components/FormInput/FormInput';
 
+class Contact extends Component {
+  render() {
     return(
       <form action="https://www.enformed.io/8atsy3me" method="POST">
+        <h3 className="text-center">Send me a message</h3>
         <div className="row">
-
-          <div className="small-12 column">
-            <div className="form-floating-label">
-              <input type="email" id="email" name="email" required
-                    onClick={focusIn} 
-                    className={this.state.hasValue ? "has-value" : ""} />
-              <label>Email float up</label>
-            </div>
+          <div className="medium-12 columns">
+            <FormInput
+              element="input"
+              type="email"
+              id="email"  
+              name="email"
+              required={true}
+              label="Email Address"
+            />
           </div>
-
-          <div className="small-12 column">
-            <div className="form-floating-label">
-              <input type="text" id="password" name="password" />
-              <label>Float password up</label>
-            </div>
+          <div className="medium-12 columns">
+            <FormInput
+              element="textarea"
+              rows="5"
+              id="message"
+              name="message"
+              required={true}
+              label="Message"
+            />
           </div>
-
-          <div className="small-12 column">
-            <div className="form-floating-label">
-              <input type="tel" id="tel" name="tel" />
-              <label>Float phone up</label>
-            </div>
-          </div>
-
-          <div className="small-12 column">
-            <div className="form-floating-label">
-              <textarea name="" id="" rows="5" placeholder=""></textarea>
-              <label>Float textarea up</label>
-            </div>
-          </div>
-          
+        </div>
+        <div className="medium-12 columns">
+          <input type="hidden" name="*honeypot" />
+          <input type="hidden" name="*formname" value="GithubPortfolioForm" />
+          <input type="submit" className="button hollow expanded" value="Submit" />
         </div>
       </form>
     );
